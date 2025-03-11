@@ -12,7 +12,10 @@ Implemented a linear regression model using gradient descent to optimize weight 
 - **Polynomial Regression & Model Fitting (PolynomialRegression.py):**  
 Explored polynomial regression for modeling nonlinear relationships between variables. The project tested polynomial models of varying degrees and evaluated performance using Mean Squared Error (MSE) and R² scores. Training and testing losses were analyzed to identify overfitting and underfitting behaviors. Sample visualizations are included as PNG files.
 
+- **Logistic Regression & Binary Classification (BinaryClassification.py):**
+In this project, we implemented logistic regression to classify diabetes risk using the Pima Indians Diabetes Dataset. The model predicts whether an individual has diabetes based on key health indicators such as glucose level, BMI, and age.
+
 - **More Projects to Come:**
-Last update - 3/2/2025
+Last update - 3/11/2025
 
 Each project demonstrates key machine learning concepts, focusing on algorithmic implementation, data preprocessing, model evaluation, and optimization.
