@@ -15,7 +15,10 @@ Explored polynomial regression for modeling nonlinear relationships between vari
 - **Logistic Regression & Binary Classification (BinaryClassification.py):**  
 In this project, we implemented logistic regression to classify diabetes risk using the Pima Indians Diabetes Dataset. The model predicts whether an individual has diabetes based on key health indicators such as glucose level, BMI, and age.
 
+- **Multi-Class Classification with the Iris Dataset (MultipleClassificationS.py):**  
+This project applies three core machine learning classifiers—Support Vector Machine (SVM), K-Nearest Neighbors (KNN), and Logistic Regression—to the well-known Iris flower dataset. The goal was to evaluate how well each model performs in classifying three iris species based on features like petal and sepal dimensions.
+
 - **More Projects to Come:**
-Last update - 3/11/2025
+Last update - 4/2/2025
 
 Each project demonstrates key machine learning concepts, focusing on algorithmic implementation, data preprocessing, model evaluation, and optimization.
