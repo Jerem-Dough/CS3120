@@ -22,6 +22,6 @@ This project applies three core machine learning classifiers—Support Vector Ma
 Implemented a basic 3-6-2 neural network using NumPy. Trained the model with forward/backward propagation and manual gradient descent to classify binary targets. Evaluated predictions on both training data and a new input [1, 1, 1].
 
 - **More Projects to Come:**
-Last update - 4/2/2025
+Last update - 4/16/2025
 
 Each project demonstrates key machine learning concepts, focusing on algorithmic implementation, data preprocessing, model evaluation, and optimization.
