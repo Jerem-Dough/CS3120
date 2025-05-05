@@ -1,0 +1,75 @@
+import numpy as np
+from tensorflow.keras import datasets, models, layers, utils
+
+# Load the MNIST dataset (handwritten digits)
+(x_train, y_train), (x_test, y_test) = datasets.mnist.load_data()
+
+# Normalize input data: scale pixel values to [0, 1] range
+x_train = x_train.astype("float32") / 255.0
+x_test = x_test.astype("float32") / 255.0
+
+# Reshape input data to add channel dimension (grayscale = 1)
+x_train = np.expand_dims(x_train, -1)  # shape: (60000, 28, 28, 1)
+x_test = np.expand_dims(x_test, -1)
+
+# Convert labels to one-hot encoding
+y_train = utils.to_categorical(y_train, 10)
+y_test = utils.to_categorical(y_test, 10)
+
+# Define the CNN model
+model = models.Sequential()
+
+# First convolutional layer: 32 filters, 3x3 kernel, ReLU activation
+model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+
+# Second convolutional layer: 64 filters, 3x3 kernel, ReLU
+model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+
+# Max pooling layer: 2x2 pool size
+model.add(layers.MaxPooling2D(pool_size=(2, 2)))
+
+# Flatten the 3D output to 1D for the fully connected layers
+model.add(layers.Flatten())
+
+# Fully connected (dense) layer: 128 units, ReLU activation
+model.add(layers.Dense(128, activation='relu'))
+
+# Dropout layer: randomly set 50% of inputs to 0 (to prevent overfitting)
+model.add(layers.Dropout(0.5))
+
+# Output layer: 10 units (digits 0–9), softmax activation for classification
+model.add(layers.Dense(10, activation='softmax'))
+
+# Compile the model with loss function and optimizer
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+
+# Set training parameters
+batch_size = 128
+epochs = 5
+
+# Train the model on training data
+history = model.fit(x_train, y_train,
+                    batch_size=batch_size,
+                    epochs=epochs,
+                    validation_split=0.1,
+                    verbose=2)
+
+# Evaluate the model on test data
+test_loss, test_accuracy = model.evaluate(x_test, y_test, verbose=0)
+print("\nFinal Test Performance:")
+print("Test Accuracy:", round(test_accuracy, 4))
+print("Test Loss:", round(test_loss, 4))
+
+# Show model architecture
+print("\nModel Summary:")
+model.summary()
+
+# Number of trainable parameters
+trainable_params = np.sum([np.prod(v.shape) for v in model.trainable_weights])
+print("\nTotal Trainable Parameters:", trainable_params)
+
+# Dataset stats!
+print("Training Samples Used:", x_train.shape[0])
+print("Test Samples Used:", x_test.shape[0])

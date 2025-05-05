@@ -21,7 +21,10 @@ This project applies three core machine learning classifiers—Support Vector Ma
 - **Neural Network from Scratch (NeuralNetwork.py):**  
 Implemented a basic 3-6-2 neural network using NumPy. Trained the model with forward/backward propagation and manual gradient descent to classify binary targets. Evaluated predictions on both training data and a new input [1, 1, 1].
 
+- **CNN for MNIST Digit Classification (ConvolutionalNeuralNetwork.py):**  
+Trained a convolutional neural network using Keras to classify handwritten digits from the MNIST dataset. Included convolution, pooling, dropout, and dense layers. Evaluated model accuracy, loss, and trainable parameters after training over 5 epochs.
+
 - **More Projects to Come:**
-Last update - 4/16/2025
+Last update - 5/5/2025
 
 Each project demonstrates key machine learning concepts, focusing on algorithmic implementation, data preprocessing, model evaluation, and optimization.
