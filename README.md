@@ -24,7 +24,4 @@ Implemented a basic 3-6-2 neural network using NumPy. Trained the model with for
 - **CNN for MNIST Digit Classification (ConvolutionalNeuralNetwork.py):**  
 Trained a convolutional neural network using Keras to classify handwritten digits from the MNIST dataset. Included convolution, pooling, dropout, and dense layers. Evaluated model accuracy, loss, and trainable parameters after training over 5 epochs.
 
-- **More Projects to Come:**
-Last update - 5/5/2025
-
 Each project demonstrates key machine learning concepts, focusing on algorithmic implementation, data preprocessing, model evaluation, and optimization.
